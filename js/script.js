@@ -31,7 +31,7 @@ var calledQuotes = [];
 var currentRandomQuoteIndex = Math.floor ( Math.random() * quotes.length );
 
 // Function that returns a random and unique index of an array of quotes objects, checking if all indices have been displayed, then resetting the list once all quotes have been displayed before returning the randomQuoteIndex
-function getQuoteIndex () {	
+function getRandomQuote () {	
 	
 	//Sets currentRandomQuoteIndex to random integer 0 to number of quotes minus 1 for indexing in calledQuotes array	
 	while (calledQuotes.indexOf(currentRandomQuoteIndex) !== -1) {
@@ -65,7 +65,7 @@ function printQuote () {
 	timeDelay = window.setInterval(printQuote, 8000);
 
 	// Stores random quotation from quotes array of objects
-	index = getQuoteIndex();
+	index = getRandomQuote();
 	
 	quotation = quotes[index].quote;
 	source = quotes[index].source;
