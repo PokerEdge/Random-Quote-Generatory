@@ -3,7 +3,6 @@ var quotes = [
 	{
 		quote: "If you want to find the secrets of the universe, think in terms of energy, frequency and vibration.", 
 		source: "Nikola Tesla",
-		citation: "",
 		year: 1942,
 		tags: ["science", "inspiration", "philosophy"]
 	},
@@ -17,21 +16,17 @@ var quotes = [
 	{
 		quote: "I have never let my schooling interfere with my education.", 
 		source: "Samuel Clemens",
-		citation: "",
 		year: 1907,
 		tags: ["observation", "comedy"]
 	},
 	{
 		quote: "Nothing ends nicely, that's why it ends.", 
 		source: "Tom Cruise",
-		citation: "",
-		year: "",
 		tags: ["observation", "philosophy"]
 	},
 	{
 		quote: "Men don't care what's on TV. They only care what else is on TV.", 
 		source: "Jerry Seinfeld",
-		citation: "",
 		year: 2008,
 		tags: ["comedy", "observation"]
 	},
