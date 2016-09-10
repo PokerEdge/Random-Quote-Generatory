@@ -27,19 +27,19 @@ function randomRGB() {
 var calledQuotes = [];
 	
 // Creates a randomized index integer from 0 to the length of the quotes array
-var currentRandomQuoteIndex = Math.floor ( Math.random() * quotes.length );
+
 
 // Function that returns a random and unique index of an array of quotes objects, checking if all indices have been displayed, then resetting the list once all quotes have been displayed before returning the randomQuoteIndex
 function getRandomQuote () {	
 	
-
+	var currentRandomQuoteIndex = Math.floor ( Math.random() * quotes.length );
 	//Sets currentRandomQuoteIndex to random integer 0 to number of quotes minus 1 for indexing in calledQuotes array	
-	while (calledQuotes.indexOf(quotes[currentRandomQuoteIndex].quote) !== -1) {
+	while (calledQuotes.indexOf(quotes[currentRandomQuoteIndex]) !== -1) {
 		currentRandomQuoteIndex = Math.floor ( Math.random() * quotes.length );
 	}
 
 	// Pushes the quotes.(currentRandomIndex).quote string to the calledQuotes[] array
-	calledQuotes.push(quotes[currentRandomQuoteIndex].quote);
+	calledQuotes.push(quotes[currentRandomQuoteIndex]);
 
 	// Checks to see if calledQuotes[] array is the same length as the quotes[] array. If the lengths are equal 
 	//     calledQuotes is reset, or emptied, so that the next unique and random quote can be stored in the array 
@@ -48,24 +48,24 @@ function getRandomQuote () {
 	}
 
 	// Returns the quote string of the current random quotation from the quotes object
-	return quotes[currentRandomQuoteIndex].quote;
+	return quotes[currentRandomQuoteIndex];
 }
 
 
 // Function that prints a quote and other information to the screen by creating a string referenced by index.html
 function printQuote () {
 	
-	var HTML;
+	var randomQuoteObject = getRandomQuote();
+	var HTML;	
 
-	// Sets the variable quotation equal to a new random and unique quotation taken from the quotes object
-	var quotation = getRandomQuote();
+	//get rid of currentRandomQuoteIndex part of this function
 
-	// Using the currentRandomIndex, each variable is set to take the value from the quotes object that corresponds to 
-	//      the random quote returned by the getRandomQuote() function
-	var source = quotes[currentRandomQuoteIndex].source;
-	var citation = quotes[currentRandomQuoteIndex].citation;
-	var year = quotes[currentRandomQuoteIndex].year;
-	var tags = quotes[currentRandomQuoteIndex].tags.join(", ");
+	// Set each variable to take the value from the quotes object to which the variable corresponds using currentRandomQuoteIndex
+	var quotation = randomQuoteObject.quote;
+	var source = randomQuoteObject.source;
+	var citation = randomQuoteObject.citation;
+	var year = randomQuoteObject.year;
+	var tags = randomQuoteObject.tags.join(", ");
 
 	// Resets timeDelay to avoid premature printing of quotes with the set timeDelay
 	window.clearTimeout(timeDelay);
